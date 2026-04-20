@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 16:14:59 by martinmust        #+#    #+#             */
-/*   Updated: 2026/04/19 22:14:05 by martinmust       ###   ########.fr       */
+/*   Updated: 2026/04/20 15:25:24 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main()
     std::string cmd;
     PhoneBook book;
     book.count = 0;
+    book.flag = 0;
     std::cout << "\033[2J\033[H\n" << std::flush;
     do
     {

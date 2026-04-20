@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 19:49:31 by martinmust        #+#    #+#             */
-/*   Updated: 2026/04/20 00:51:47 by martinmust       ###   ########.fr       */
+/*   Updated: 2026/04/20 15:48:49 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 void PhoneBook::add_contact()
 {
-    if(count == 8)
+    if(count == 8){
         count = 0;
+        flag = 1;
+    }
         
     std::cout << "\033[2J\033[H\n" << std::flush;
     std::cout << "\tADD New Contact" << '\n';
@@ -55,14 +57,22 @@ void PhoneBook::add_contact()
     std::cout << "\033[2J\033[H\n" << std::flush;
 }
 
-static void print_short_contact(int count, Contact list[8])
+static void print_short_contact(int count, int flag, Contact list[8])
 {
-    for(int i=0; i<count; i++)
+    int i = 0, j = 0;
+    // std::string newStr;
+    if (flag == 1)
+        i = 8;
+    else
+        i = count;
+    
+    for(; j<i; j++)
     {
-        std::cout << std::setw(10) << i;
-        std::cout << '|' << std::setw(10) << list[i].first_name;
-        std::cout << '|' << std::setw(10) << list[i].last_name;
-        std::cout << '|' << std::setw(10) << list[i].nickname;
+
+        std::cout << std::setw(10) << j;
+        std::cout << '|' << std::setw(10) << list[j].first_name;
+        std::cout << '|' << std::setw(10) << list[j].last_name;
+        std::cout << '|' << std::setw(10) << list[j].nickname;
         std::cout << '\n';
     }
 }
@@ -81,10 +91,18 @@ static void print_full_contact(std::string index, Contact list[8]){
     int num = 0;
     num = index[0] - '0';
 
-    if (index[1] && (num > 7))
+    if (index[1] || (num > 7)){
+        std::cout << "WRONG INPUT !\n";
         return;
+    }
     
-    
+    std::cout << "\033[2J\033[H\n" << std::flush;
+    std::cout << "\tContact info: " << num << '\n';
+    std::cout << "First name: " << list[num].first_name << '\n';
+    std::cout << "Last name: " << list[num].last_name << '\n';
+    std::cout << "Nickname: " << list[num].nickname << '\n';
+    std::cout << "Phone number: " << list[num].phone_number << '\n';
+    std::cout << "Dark secret: " << list[num].dark_secret << '\n';
 
 }
 
@@ -93,7 +111,7 @@ void PhoneBook::search_contacts()
     std::string index;
 
     print_short_header();
-    print_short_contact(count, contactsList);
+    print_short_contact(count, flag, contactsList);
     
     do {
         std::cout << "Enter index (0-7) or exit: ";
@@ -101,4 +119,6 @@ void PhoneBook::search_contacts()
         print_full_contact(index, contactsList);
         std::cout << '\n';
     } while(index != "exit");
+
+    std::cout << "\033[2J\033[H\n" << std::flush;
 }

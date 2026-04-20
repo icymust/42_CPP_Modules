@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 17:43:00 by martinmust        #+#    #+#             */
-/*   Updated: 2026/04/19 21:43:51 by martinmust       ###   ########.fr       */
+/*   Updated: 2026/04/20 15:25:27 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ Contact contactsList[8];
 
 public:
     int count;
+    int flag;
     void add_contact();
     void search_contacts();
 };
