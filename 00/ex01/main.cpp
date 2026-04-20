@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
+/*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 16:14:59 by martinmust        #+#    #+#             */
-/*   Updated: 2026/04/20 15:25:24 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/04/21 00:21:33 by martinmust       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ int main()
     {
         std::cout << "Choose action for PhoneBook (ADD, SEARCH, EXIT)\n";
         std::cout << "Command: ";
-        std::getline(std::cin, cmd);
+        if (!std::getline(std::cin, cmd))
+            break;
         std::cout << '\n';
         if (cmd == "ADD")
             book.add_contact();

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
+/*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 17:43:00 by martinmust        #+#    #+#             */
-/*   Updated: 2026/04/20 15:25:27 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/04/21 00:37:58 by martinmust       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <iomanip>
-#include <unistd.h>
+#include <string>
 
 class Contact
 {
@@ -29,9 +29,8 @@ public:
 
 class PhoneBook
 {
-
 private:
-Contact contactsList[8];
+    Contact contactsList[8];
 
 public:
     int count;
