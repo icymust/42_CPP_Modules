@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
+/*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 19:49:31 by martinmust        #+#    #+#             */
-/*   Updated: 2026/04/21 00:34:45 by martinmust       ###   ########.fr       */
+/*   Updated: 2026/04/21 11:15:39 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,9 +104,9 @@ static void print_short_contact(int count, int flag, Contact list[8])
     for (; j < i; j++)
     {
         std::cout << std::setw(10) << j;
-        std::cout << '|' << std::setw(10) << check_string(list[j].first_name);
-        std::cout << '|' << std::setw(10) << check_string(list[j].last_name);
-        std::cout << '|' << std::setw(10) << check_string(list[j].nickname);
+        std::cout << '|' << std::setw(10) << std::right << check_string(list[j].first_name);
+        std::cout << '|' << std::setw(10) << std::right << check_string(list[j].last_name);
+        std::cout << '|' << std::setw(10) << std::right << check_string(list[j].nickname);
         std::cout << '\n';
     }
 }
