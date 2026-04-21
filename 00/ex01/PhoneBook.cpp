@@ -6,7 +6,7 @@
 /*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/19 19:49:31 by martinmust        #+#    #+#             */
-/*   Updated: 2026/04/21 11:15:39 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/04/21 11:24:17 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,13 +95,13 @@ static std::string check_string(std::string str)
 
 static void print_short_contact(int count, int flag, Contact list[8])
 {
-    int i = 0, j = 0;
+    int i = 0, j;
     if (flag == 1)
         i = 8;
     else
         i = count;
 
-    for (; j < i; j++)
+    for (j = 0; j < i; j++)
     {
         std::cout << std::setw(10) << j;
         std::cout << '|' << std::setw(10) << std::right << check_string(list[j].first_name);
