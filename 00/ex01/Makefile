@@ -8,7 +8,7 @@ SRCS = main.cpp \
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME):$(OBJS)
-	${CXX} ${CXXFLAGS} ${OBJS} -o ${NAME}
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
@@ -16,10 +16,10 @@ $(NAME):$(OBJS)
 all: $(NAME)
 
 clean: 
-	rm -f ${OBJS}
+	rm -f $(OBJS)
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f $(NAME)
 
 re: fclean all
 
