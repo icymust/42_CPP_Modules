@@ -6,14 +6,13 @@
 /*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 16:11:06 by martinmust        #+#    #+#             */
-/*   Updated: 2026/05/02 18:04:01 by martinmust       ###   ########.fr       */
+/*   Updated: 2026/05/02 19:08:28 by martinmust       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
 #define ZOMBIE_HPP
 
-#include <iostream>
 #include <string>
 
 
