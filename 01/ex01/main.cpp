@@ -5,19 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/02 16:34:27 by martinmust        #+#    #+#             */
-/*   Updated: 2026/05/15 12:56:02 by mmustone         ###   ########.fr       */
+/*   Created: 2026/05/15 14:06:17 by mmustone          #+#    #+#             */
+/*   Updated: 2026/05/15 15:34:58 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main(void)
-{
-    Zombie *z = newZombie("Zuuk");
-    z->announce();
-    randomChump("Zak");
+int main(){
+    Zombie *horde = zombieHorde(5, "Zak");
 
-    delete z;
-    return (0);
+    for(int i=0; i < 5; i++)
+        horde[i].announce();
+
+    delete[] horde;
 }
