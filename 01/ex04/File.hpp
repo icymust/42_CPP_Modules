@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   File.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/18 21:52:36 by martinmust        #+#    #+#             */
-/*   Updated: 2026/04/28 11:14:26 by mmustone         ###   ########.fr       */
+/*   Created: 2026/05/22 15:07:00 by mmustone          #+#    #+#             */
+/*   Updated: 2026/05/22 16:32:57 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FILE_HPP
+#define FILE_HPP
+
 #include <iostream>
+#include <string>
+#include <fstream>
 
-char correct_char(char c)
+class File
 {
-    if (c > 96 && c < 123)
-        return (c - 32);
-    return (c);
-}
+private:
+    std::string filename_;
+    std::string s1_;
+    std::string s2_;
+public:
+    int setArgs(char **av);
+    int replace();
+};
 
-int main(int ac, char **av)
-{
-    int i = 0, j = 0;
-    if (ac <= 1)
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-    while (av[++i])
-    {
-        j = 0;
-        while (av[i][j])
-            std::cout << correct_char(av[i][j++]);
-    }
-    std::cout << "\n";
-    return (0);
-}
+#endif
