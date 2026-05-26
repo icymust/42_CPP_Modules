@@ -6,7 +6,7 @@
 /*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/22 15:21:34 by mmustone          #+#    #+#             */
-/*   Updated: 2026/05/24 20:53:30 by martinmust       ###   ########.fr       */
+/*   Updated: 2026/05/26 23:10:04 by martinmust       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int File::setArgs(char **av){
     s1_ = av[2];
     s2_ = av[3];
 
-    if(filename_.empty() || s1_.empty() || s2_.empty())
+    if(filename_.empty() || s1_.empty())
         return(1);
     return(0);
 }

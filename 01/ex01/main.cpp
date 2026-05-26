@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
+/*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 14:06:17 by mmustone          #+#    #+#             */
-/*   Updated: 2026/05/15 15:34:58 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/05/26 23:10:18 by martinmust       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ int main(){
         horde[i].announce();
 
     delete[] horde;
+    return(0);
 }
