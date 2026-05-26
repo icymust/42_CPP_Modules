@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
+/*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 14:33:43 by mmustone          #+#    #+#             */
-/*   Updated: 2026/05/15 15:32:54 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/05/26 23:54:54 by martinmust       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
+#include <iostream>
 
 Zombie::Zombie()
 {

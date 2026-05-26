@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
+/*   By: martinmust <martinmust@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 14:07:57 by mmustone          #+#    #+#             */
-/*   Updated: 2026/05/15 16:21:37 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/05/26 23:54:44 by martinmust       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIEHORDE_HPP
 #define ZOMBIEHORDE_HPP
 
-#include <iostream>
 #include <string>
 
 class Zombie
