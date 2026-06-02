@@ -48,7 +48,7 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap& other)
 	if (this != &other)
 	{
 		name_ = other.name_;
-		ClapTrap::name_ = other.name_ + "_clap_name";
+		ClapTrap::name_ = other.ClapTrap::name_;
 		hitPoints = other.hitPoints;
 		energyPoints = other.energyPoints;
 		attackDamage = other.attackDamage;
