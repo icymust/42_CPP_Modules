@@ -6,7 +6,7 @@
 /*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 14:41:05 by mmustone          #+#    #+#             */
-/*   Updated: 2026/06/04 19:12:21 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/06/05 11:46:05 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ public:
     Cat();
     Cat(const Cat &other);
     Cat &operator=(const Cat &other);
-    virtual ~Cat();
+    ~Cat();
 
     void makeSound() const;
     std::string getType() const;
