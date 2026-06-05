@@ -6,7 +6,7 @@
 /*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 15:56:56 by mmustone          #+#    #+#             */
-/*   Updated: 2026/06/05 17:04:05 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/06/05 18:18:52 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,20 @@
 
 int main()
 {
+    std::cout << "\n--- Abstract Animal test ---" << std::endl;
+
+    Animal *dog = new Dog();
+    Animal *cat = new Cat();
+
+    std::cout << dog->getType() << std::endl;
+    std::cout << cat->getType() << std::endl;
+
+    dog->makeSound();
+    cat->makeSound();
+
+    delete dog;
+    delete cat;
+
     std::cout << "\n--- Animal array test ---" << std::endl;
 
     Animal *animals[4];
@@ -26,37 +40,11 @@ int main()
     for (int i = 2; i < 4; i++)
         animals[i] = new Cat();
 
-    std::cout << "\n--- Sound test ---" << std::endl;
-
     for (int i = 0; i < 4; i++)
         animals[i]->makeSound();
 
-    std::cout << "\n--- Delete through Animal* test ---" << std::endl;
-
     for (int i = 0; i < 4; i++)
         delete animals[i];
-
-    std::cout << "\n--- Dog copy constructor test ---" << std::endl;
-
-    Dog dog1;
-    Dog dog2(dog1);
-
-    std::cout << "\n--- Dog assignment operator test ---" << std::endl;
-
-    Dog dog3;
-    dog3 = dog1;
-
-    std::cout << "\n--- Cat copy constructor test ---" << std::endl;
-
-    Cat cat1;
-    Cat cat2(cat1);
-
-    std::cout << "\n--- Cat assignment operator test ---" << std::endl;
-
-    Cat cat3;
-    cat3 = cat1;
-
-    std::cout << "\n--- End of main ---" << std::endl;
 
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 14:39:17 by mmustone          #+#    #+#             */
-/*   Updated: 2026/06/04 19:09:05 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/06/05 18:12:08 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
     Animal &operator=(const Animal &other);
     virtual ~Animal();
 
-    virtual void makeSound() const;
+    virtual void makeSound() const = 0;
     std::string getType() const;
 };
 
