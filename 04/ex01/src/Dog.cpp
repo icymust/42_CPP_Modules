@@ -6,28 +6,30 @@
 /*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 15:25:53 by mmustone          #+#    #+#             */
-/*   Updated: 2026/06/04 19:06:27 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/06/05 17:49:28 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "../lib/Dog.hpp"
 #include <iostream>
 
 Dog::Dog() : Animal("Dog")
 {
-    std::cout << "Dog created with type: " << type_ << std::endl;
+    brain_ = new Brain();
+    std::cout << "Dog created with brain" << std::endl;
 }
 
-Dog::Dog(const Dog &other)
+Dog::Dog(const Dog &other) : Animal(other)
 {
-    type_ = other.type_;
-	std::cout << "Dog " << this->type_ << " created copy" << std::endl;
+    brain_ = new Brain(*other.brain_);
+	std::cout << "Dog created copy with brain" << std::endl;
 }
 
 Dog &Dog::operator=(const Dog &other)
 {
     if(this != &other){
-        type_ = other.type_;
+        Animal::operator=(other);
+        *brain_ = *other.brain_;
     }
     std::cout << "Dog copy assignment operator called" << std::endl;
     return (*this);
@@ -36,6 +38,7 @@ Dog &Dog::operator=(const Dog &other)
 Dog::~Dog()
 {
     std::cout << "Dog destructor" << std::endl;
+    delete brain_;
 }
 
 void Dog::makeSound() const

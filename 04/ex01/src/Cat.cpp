@@ -6,21 +6,22 @@
 /*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 15:06:43 by mmustone          #+#    #+#             */
-/*   Updated: 2026/06/04 19:06:10 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/06/05 18:00:34 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "../lib/Cat.hpp"
 #include <iostream>
 
 Cat::Cat() : Animal("Cat")
 {
-    std::cout << "Cat created with type: " << type_ << std::endl;
+    brain_ = new Brain();
+    std::cout << "Cat created with brain" << std::endl;
 }
 
-Cat::Cat(const Cat &other)
+Cat::Cat(const Cat &other) : Animal(other)
 {
-    type_ = other.type_;
+    brain_ = new Brain(*other.brain_);
 	std::cout << "Cat " << this->type_ << " created copy" << std::endl;
 }
 
@@ -28,7 +29,8 @@ Cat &Cat::operator=(const Cat &other)
 {
     if(this != &other)
     {
-        type_ = other.type_;
+        Animal::operator=(other);
+        *brain_ = *other.brain_;
     }
     std::cout << "Cat copy assignment operator called" << std::endl;
     return (*this);
@@ -37,6 +39,7 @@ Cat &Cat::operator=(const Cat &other)
 Cat::~Cat()
 {
     std::cout << "Cat destructor" << std::endl;
+    delete brain_;
 }
 
 void Cat::makeSound() const

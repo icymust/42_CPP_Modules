@@ -1,4 +1,4 @@
-NAME = animal
+NAME = brain
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Ilib
 
@@ -7,7 +7,8 @@ SRCS = src/main.cpp \
 	src/Cat.cpp \
 	src/Dog.cpp \
 	src/WrongAnimal.cpp \
-	src/WrongCat.cpp
+	src/WrongCat.cpp \
+	src/Brain.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
