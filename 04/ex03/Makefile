@@ -1,0 +1,30 @@
+NAME = magic
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Ilib
+
+SRCS = src/main.cpp \
+	src/AMateria.cpp \
+	src/Character.cpp \
+	src/Cure.cpp \
+	src/Ice.cpp \
+	src/MateriaSource.cpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+$(NAME):$(OBJS)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+all: $(NAME)
+
+clean:
+	rm -f $(OBJS)
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
+.PHONY: all clean fclean re
