@@ -6,7 +6,7 @@
 /*   By: mmustone <mmustone@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/06 15:33:06 by mmustone          #+#    #+#             */
-/*   Updated: 2026/06/06 15:46:03 by mmustone         ###   ########.fr       */
+/*   Updated: 2026/06/06 16:04:29 by mmustone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
     if (this != &other)
     {
         for (int i = 0; i < 4; i++)
-            materia_[i] = other.materia_[i];
+            materia_[i] = other.materia_[i]->clone();
     }
     return (*this);
 }
