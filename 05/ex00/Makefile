@@ -9,6 +9,8 @@ OBJS = $(SRCS:.cpp=.o)
 $(NAME):$(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
+$(OBJS): Bureaucrat.hpp
+
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 

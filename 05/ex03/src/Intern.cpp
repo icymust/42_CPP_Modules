@@ -4,21 +4,19 @@
 #include "../lib/PresidentialPardonForm.hpp"
 #include <iostream>
 
-namespace {
-	AForm* createShrubbery(const std::string& target)
-	{
-		return new ShrubberyCreationForm(target);
-	}
+AForm* Intern::createShrubbery(const std::string& target) const
+{
+	return new ShrubberyCreationForm(target);
+}
 
-	AForm* createRobotomy(const std::string& target)
-	{
-		return new RobotomyRequestForm(target);
-	}
+AForm* Intern::createRobotomy(const std::string& target) const
+{
+	return new RobotomyRequestForm(target);
+}
 
-	AForm* createPardon(const std::string& target)
-	{
-		return new PresidentialPardonForm(target);
-	}
+AForm* Intern::createPardon(const std::string& target) const
+{
+	return new PresidentialPardonForm(target);
 }
 
 Intern::Intern() {}
@@ -32,15 +30,17 @@ Intern::~Intern() {}
 
 AForm* Intern::makeForm(const std::string& name, const std::string& target) const
 {
-	typedef AForm* (*Factory)(const std::string&);
+	typedef AForm* (Intern::*Factory)(const std::string&) const;
 	const std::string names[] = {
 		"shrubbery creation", "robotomy request", "presidential pardon"
 	};
-	const Factory factories[] = {createShrubbery, createRobotomy, createPardon};
+	const Factory factories[] = {
+		&Intern::createShrubbery, &Intern::createRobotomy, &Intern::createPardon
+	};
 
 	for (int i = 0; i < 3; ++i) {
 		if (name == names[i]) {
-			AForm* form = factories[i](target);
+			AForm* form = (this->*factories[i])(target);
 			std::cout << "Intern creates " << form->getName() << std::endl;
 			return form;
 		}
