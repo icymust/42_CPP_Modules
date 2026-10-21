@@ -1,4 +1,4 @@
-#include "PresidentialPardonForm.hpp"
+#include "../lib/PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm()
 	: AForm("PresidentialPardonForm", 25, 5), _target("Default") {}
