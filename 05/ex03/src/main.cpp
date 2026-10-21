@@ -15,17 +15,17 @@ static void demonstrate(const Intern& intern, const std::string& name,
 	try {
 		std::cout << *form << std::endl;
 		Bureaucrat chief("Chief", 1);
-		chief.executeForm(*form); // Expected refusal: not signed yet.
+		chief.executeForm(*form);
 		chief.signForm(*form);
 		if (!form->getIsSigned())
 			throw std::runtime_error("Signing failed");
-		form->execute(chief); // Unexpected errors reach the catch below.
+		form->execute(chief);
 		chief.executeForm(*form);
 	} catch (...) {
 		delete form;
 		throw;
 	}
-	delete form; // The caller owns the object returned by makeForm().
+	delete form;
 }
 
 int main()

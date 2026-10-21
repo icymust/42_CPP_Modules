@@ -25,25 +25,25 @@ int main()
 		{
 			std::cout << e.what() << std::endl;
 		}
-		std::cout << permit << std::endl; // Still unsigned
+		std::cout << permit << std::endl;
 
 		std::cout << "\n=== 3. beSigned: equal grade succeeds ===" << std::endl;
 		permit.beSigned(senior);
-		std::cout << permit << std::endl; // Signed
+		std::cout << permit << std::endl;
 
 		std::cout << "\n=== 4. Copy and assignment ===" << std::endl;
 		Form copy(permit);
 		Form other("Other", 100, 75);
 		other = permit;
-		std::cout << copy << std::endl; // All attributes copied
-		std::cout << other << std::endl; // Only signing status copied
+		std::cout << copy << std::endl;
+		std::cout << other << std::endl;
 
 		std::cout << "\n=== 5. signForm: refusal and success ===" << std::endl;
 		Form request("Request", 50, 25);
 		junior.signForm(request);
-		std::cout << request << std::endl; // Still unsigned
+		std::cout << request << std::endl;
 		senior.signForm(request);
-		std::cout << request << std::endl; // Signed
+		std::cout << request << std::endl;
 
 		std::cout << "\n=== 6. Invalid signing / execution grades ===" << std::endl;
 		const int signGrades[] = {0, 151, 50, 50};

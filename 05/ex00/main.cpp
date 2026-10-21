@@ -12,16 +12,16 @@ int main()
 
 		std::cout << "\n=== 2. Promotion and demotion ===" << std::endl;
 		martin.upGrade();
-		std::cout << martin << std::endl; // Grade 41
+		std::cout << martin << std::endl;
 		martin.downGrade();
-		std::cout << martin << std::endl; // Grade 42
+		std::cout << martin << std::endl;
 
 		std::cout << "\n=== 3. Copy and assignment ===" << std::endl;
 		Bureaucrat copy(martin);
 		Bureaucrat other("Other", 100);
 		other = martin;
-		std::cout << copy << std::endl; // Name and grade copied
-		std::cout << other << std::endl; // Own name, grade 42
+		std::cout << copy << std::endl;
+		std::cout << other << std::endl;
 
 		std::cout << "\n=== 4. Invalid constructor grades ===" << std::endl;
 		const int grades[] = {0, 151};
@@ -50,7 +50,7 @@ int main()
 		{
 			std::cout << e.what() << std::endl;
 		}
-		std::cout << highest << std::endl; // Still grade 1
+		std::cout << highest << std::endl;
 
 		std::cout << "\n=== 6. Demotion beyond grade 150 ===" << std::endl;
 		Bureaucrat lowest("Lowest", 150);
@@ -63,7 +63,7 @@ int main()
 		{
 			std::cout << e.what() << std::endl;
 		}
-		std::cout << lowest << std::endl; // Still grade 150
+		std::cout << lowest << std::endl;
 	}
 	catch (const std::exception& e)
 	{

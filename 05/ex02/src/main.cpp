@@ -8,7 +8,6 @@
 #include <fstream>
 #include <stdexcept>
 
-// The same checks work for every concrete form through the base reference.
 static void demonstrate(AForm& form)
 {
 	std::cout << "\n=== " << form.getName() << " ===" << std::endl;
@@ -44,7 +43,7 @@ static void demonstrate(AForm& form)
 	weakExecutor.executeForm(form);
 
 	std::cout << "4. Execution at the required grade" << std::endl;
-	form.execute(executor); // Unexpected action errors reach main's catch.
+	form.execute(executor);
 	executor.executeForm(form);
 }
 
@@ -69,7 +68,7 @@ int main()
 		assigned = pardon;
 		std::cout << copy << std::endl;
 		Bureaucrat chief("Chief", 1);
-		chief.executeForm(assigned); // Also copies the target: Arthur Dent.
+		chief.executeForm(assigned);
 
 		std::cout << "\n=== Virtual destructor ===" << std::endl;
 		AForm* form = new ShrubberyCreationForm("temporary");
