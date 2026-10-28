@@ -1,7 +1,7 @@
-#include "../lib/Intern.hpp"
-#include "../lib/ShrubberyCreationForm.hpp"
-#include "../lib/RobotomyRequestForm.hpp"
-#include "../lib/PresidentialPardonForm.hpp"
+#include "../include/Intern.hpp"
+#include "../include/ShrubberyCreationForm.hpp"
+#include "../include/RobotomyRequestForm.hpp"
+#include "../include/PresidentialPardonForm.hpp"
 #include <iostream>
 
 AForm* Intern::createShrubbery(const std::string& target) const

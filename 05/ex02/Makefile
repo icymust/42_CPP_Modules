@@ -1,6 +1,6 @@
 NAME = bureaucrat
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Ilib
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude
 
 SRCS = src/Bureaucrat.cpp src/main.cpp src/AForm.cpp src/ShrubberyCreationForm.cpp \
        src/RobotomyRequestForm.cpp src/PresidentialPardonForm.cpp
@@ -11,10 +11,7 @@ all: $(NAME)
 $(NAME):$(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-$(OBJS): $(wildcard lib/*.hpp)
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJS): $(wildcard include/*.hpp)
 
 clean:
 	rm -f $(OBJS)

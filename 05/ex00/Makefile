@@ -1,6 +1,6 @@
 NAME = bureaucrat
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Ilib
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude
 
 SRCS = Bureaucrat.cpp main.cpp
 
@@ -10,9 +10,6 @@ $(NAME):$(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS): Bureaucrat.hpp
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 all: $(NAME)
 

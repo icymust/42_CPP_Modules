@@ -1,6 +1,6 @@
 NAME = bureaucrat
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Ilib
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -Iinclude
 
 SRCS = src/Bureaucrat.cpp src/main.cpp src/Form.cpp
 OBJS = $(SRCS:.cpp=.o)
@@ -8,10 +8,7 @@ OBJS = $(SRCS:.cpp=.o)
 $(NAME):$(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-$(OBJS): lib/Bureaucrat.hpp lib/Form.hpp
-
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJS): include/Bureaucrat.hpp include/Form.hpp
 
 all: $(NAME)
 

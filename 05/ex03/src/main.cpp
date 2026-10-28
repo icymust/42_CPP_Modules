@@ -1,6 +1,6 @@
-#include "../lib/Intern.hpp"
-#include "../lib/AForm.hpp"
-#include "../lib/Bureaucrat.hpp"
+#include "../include/Intern.hpp"
+#include "../include/AForm.hpp"
+#include "../include/Bureaucrat.hpp"
 #include <cstdlib>
 #include <ctime>
 #include <fstream>

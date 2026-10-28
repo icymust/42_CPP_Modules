@@ -1,4 +1,4 @@
-#include "../lib/ShrubberyCreationForm.hpp"
+#include "../include/ShrubberyCreationForm.hpp"
 #include <fstream>
 #include <stdexcept>
 

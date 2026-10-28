@@ -1,5 +1,5 @@
-#include "../lib/AForm.hpp"
-#include "../lib/Bureaucrat.hpp"
+#include "../include/AForm.hpp"
+#include "../include/Bureaucrat.hpp"
 
 AForm::AForm() : _name("Default"), _isSigned(false), _gradeToSign(150), _gradeToExecute(150) {}
 
